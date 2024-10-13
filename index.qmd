@@ -17,7 +17,7 @@ Welcome to my homepage! Here you will find some information about me and some of
 
 ## About Me
 
-I am a mathematician by training and I got my PhD in 2017 from the University of Notre Dame. I then went on to do postdocs first at the University of Illinois, Urbana-Champaign, and then another postdoc at the Max-Planck-Institüt für Mathematik. My mathematical research interests were all within what is known as stable homotopy theory, and I was particular interested in using ideas around elliptic curves and modular forms to understand complex structures in the stable homotopy groups of spheres.
+I am a mathematician by training and I got my PhD in 2017 from the University of Notre Dame. I then went on to do postdocs first at the University of Illinois, Urbana-Champaign, and then another postdoc at the Max-Planck-Institut für Mathematik. My mathematical research interests were all within what is known as stable homotopy theory, and I was particular interested in using ideas around elliptic curves and modular forms to understand complex structures in the stable homotopy groups of spheres.
 
 In 2023, I decided to take the leap and transition into tech. I worked at an early legal AI startup for a year and half where I learned a lot of cool things about software and LLMs. My current interests are around ML and AI broadly, and NLP and LLMs more specifically. I am interested in building new and exciting things with these technologies while also using mathematical background to better understand LLMs in theory. 
 
