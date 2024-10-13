@@ -28,6 +28,13 @@
     "text": "About this site"
   },
   {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Welcome to My Blog\nThis is where I write about various topics.\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "research/research.html",
     "href": "research/research.html",
     "title": "Research and Publications",
@@ -46,7 +53,21 @@
     "href": "index.html#about-me",
     "title": "Dominic Culver’s Homepage",
     "section": "About Me",
-    "text": "About Me\nI am a mathematician by training and I got my PhD in 2017 from the University of Notre Dame. I then went on to do postdocs first at the University of Illinois, Urbana-Champaign, and then another postdoc at the Max-Planck-Institüt für Mathematik. My mathematical research interests were all within what is known as stable homotopy theory, and I was particular interested in using ideas around elliptic curves and modular forms to understand complex structures in the stable homotopy groups of spheres.\nIn 2023, I decided to take the leap and transition into tech. I worked at an early legal AI startup for a year and half where I learned a lot of cool things about software and LLMs. My current interests are around ML and AI broadly, and NLP and LLMs more specifically. I am interested in building new and exciting things with these technologies while also using mathematical background to better understand LLMs in theory.\nI am currently looking for new opportunities which utilize my mathematical and research background and within AI/ML. I am also always happy to collaborate or discuss research ideas, please feel free to peruse my website and reach out!"
+    "text": "About Me\nI am a mathematician by training and I got my PhD in 2017 from the University of Notre Dame. I then went on to do postdocs first at the University of Illinois, Urbana-Champaign, and then another postdoc at the Max Planck Institute for Mathematics in Bonn Germany. My mathematical research interests were all within stable homotopy theory, and I was particularly interested in using ideas around elliptic curves and modular forms to understand complex structures in the stable homotopy groups of spheres.\nIn 2023, I decided to take the leap and transition into tech. I worked at an early legal AI startup for a year and half where I learned a lot of cool things about software and LLMs. My current interests are around ML and AI broadly, and NLP and LLMs more specifically. I am interested in building new and exciting things with these technologies while also using mathematical background to better understand LLMs in theory.\nI am currently looking for new opportunities which utilize my mathematical and research background and within AI/ML. I am also always happy to collaborate or discuss research ideas, please feel free to peruse my website and reach out!"
+  },
+  {
+    "objectID": "blog/first-post.html",
+    "href": "blog/first-post.html",
+    "title": "My First Blog Post",
+    "section": "",
+    "text": "Welcome to my first blog post! In this post, I’ll talk about how I transitioned from mathematics to machine learning and AI. I’ll cover some challenges I faced and what excites me about the field.\n\n\nAfter completing my PhD in mathematics, I found myself drawn to the potential of AI. The interdisciplinary nature of the field…"
+  },
+  {
+    "objectID": "blog/first-post.html#transitioning-to-aiml",
+    "href": "blog/first-post.html#transitioning-to-aiml",
+    "title": "My First Blog Post",
+    "section": "",
+    "text": "After completing my PhD in mathematics, I found myself drawn to the potential of AI. The interdisciplinary nature of the field…"
   },
   {
     "objectID": "notes/notes.html",
