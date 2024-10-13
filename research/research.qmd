@@ -1,0 +1,54 @@
+---
+title: Research and Publications
+format: html
+---
+
+# In progress
+
+- **The structure of the \(v_2\)-local algebraic tmf resolution (joint with Mark Behrens and Prasit Bhattacharya). Under Review**
+  
+    We give a complete description of the \(E_1\)-page of the \(v_2\)-local algebraic tmf resolution.
+
+# Publications & Preprints
+
+- **[Algebraic K-theory of Elliptic Cohomology](https://arxiv.org/abs/2204.05890) (with Gabe Angelini-Knoll, Christian Ausoni, Eva Höning, and John Rognes). Accepted, to appear in Geometry and Topology**
+  
+    We compute the \(V(2)\)-homotopy of the algebraic K-theory of the second truncated Brown-Peterson spectrum.
+
+- **[Exotic K(h)-local Picard groups when 2p-1=h^2 and the Vanishing Conjecture](https://arxiv.org/abs/2203.09455) (joint with Ningchuan Zhang). Accepted.**
+
+- **[The Motivic Lambda algebra](https://arxiv.org/abs/2112.07479) (joint with J.D. Quigley and W. Balderrama). Accepted, to appear in Geometry and Topology**
+  
+    We give a description of the motivic Lambda algebra over general base fields. We recover various calculations of Ext over the motivic Steenrod algebra and use these to determine an infinite family of \(d_2\)-differentials out of the 1-line in the R-motivic ASS.
+
+- **[Topological Hochschild Homology of the second truncated Brown-Peterson spectrum, part 1](https://arxiv.org/abs/2106.06785) (Joint with Gabe Angelini-Knoll and Eva Höning)**
+
+- **[Algebraic Slice Spectral Sequences](https://arxiv.org/abs/2007.08682) (Joint with H. Kong and J.D. Quigley). Accepted. To appear in Documenta Mathematica**
+
+- **[The telescope conjecture at height 2 and the tmf resolution](tmfASSZ.pdf) (Joint with Behrens, Beaudry, Bhattacharya, and Xu). Accepted. To appear in the Journal of Topology**
+  
+    We analyze the tmf-based Adams spectral sequence for the type 2 spectrum Z. This is used to deduce that the K(2)-local Adams-Novikov spectral sequence, whose E2-term was computed by Bhattacharya-Egger, collapses. We also explore how this spectral sequence detects the telescopic homotopy of Z.
+
+- **[K(1)-local tmf co-operations](K(1)-local_tmfcoops_current.pdf) (Joint with Paul VanKoughnett). Accepted. To appear in JHRS**
+  
+    Using Hopkins' construction of the spectrum tmf in the K(1)-local category, we compute the K(1)-local tmf cooperations.
+
+- **[kq-resolutions I](https://arxiv.org/abs/1905.11952) (Joint with JD Quigley). Accepted. To appear in Trans. AMS**
+  
+    We compute the cooperations of the very effective cover of Hermitian K-theory over the complex numbers. We use this to analyze the kq-resolution and prove complex motivic analogs of Mahowald's results using bo-resolutions, such as the order of the 2-torsion in the image of J. We also formulate and provide evidence for a motivic Telescope Conjecture.
+
+- **[The Adams spectral sequence for 3-local tmf](ASStmf3_revision2.pdf). Accepted. To appear in JHRS.** 
+
+    Last updated 10/08/2020
+
+- **[The BP<2>-cooperations algebra at odd primes](BP2coops_podd_revision1.pdf). JPAA 224 (May 2020)**
+
+    Last updated 9/20/19
+
+- **[On BP<2>-cooperations](BP2coop_final.pdf). Algebraic & Geometric Topology 19 (2019) 807-862**
+
+- **[On the E2-term of the bo-Adams spectral sequence](boASS5.pdf). J. Topology 13 (2020) 356-415.** 
+   
+    (with Mark Behrens, Agnes Beaudry, Prasit Bhattacharya, and Zhouli Xu). Last updated 2/1/17.
+
+- **[A new basis for complex K-theory cooperations algebra](t_n_numpoly_final_revised.pdf). Topology and its Applications 234 (2018) 7-25**

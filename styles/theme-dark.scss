@@ -1,0 +1,28 @@
+/*-- scss:defaults --*/
+// Base document colors
+$body-bg: #181818;
+$body-color: white;
+$link-color: #75AADB;
+
+/*-- scss:rules --*/
+// Apply the background and text color to the body
+body {
+  background-color: $body-bg;
+  color: $body-color;
+}
+
+/* Ensure headings inherit the correct color */
+h1, h2, h3, h4, h5, h6 {
+  color: $body-color; /* Turn headings white in dark mode */
+}
+
+/* Link colors */
+a {
+  color: $link-color;
+}
+
+/* Code block styling */
+pre, code {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: $body-color;
+}

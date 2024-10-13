@@ -1,0 +1,12 @@
+---
+title: "Notes"
+format: html
+# theme:
+#     light: cosmo
+#     dark: [cosmo, ../theme-dark.scss]
+---
+
+* [Slides](kqresC.pdf) from a talk I gave on join work with J.D. Quigley on the kq-resolution over the field of complex numbers. 
+
+* [Notes](modular%20forms.pdf) for a talk on modular forms I gave at European Talbot 2017. 
+

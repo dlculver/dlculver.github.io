@@ -1,0 +1,19 @@
+---
+title: "Teaching"
+format: html
+---
+
+## Current Courses:
+
+I am not currently teaching.
+
+## Past Courses:
+
+- Spring 2020: [Math 595 - Chromatic Homotopy Theory](math595spring2020/math595.html)
+- Fall 2019: Math 416 and 526
+- Spring 2019: [Math 527](spring2019/math527.html)
+- Spring 2019: [Math 402](spring2019/math402.html)
+- Fall 2018: [Math 347](math347fall2018/math347.html)
+- Spring 2018: [Math 402](math402spring2018/math402.html)
+- Fall 2017: [Math 347](math347fall2017/math347.html)
+

@@ -1,2 +1,0 @@
-# dlculver.github.io
-webpage

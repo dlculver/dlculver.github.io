@@ -1,0 +1,26 @@
+project:
+  type: website
+
+website:
+  title: "Dominic Culver's Homepage"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Research"
+        href: research/research.qmd
+      - text: "Teaching"
+        href: teaching/teaching.qmd
+      - text: "Notes & Talks"
+        href: notes/notes.qmd
+    tools:
+      - icon: github
+        href: https://github.com/dlculver
+      - icon: linkedin
+        href: https://www.linkedin.com/in/dominic-culver
+
+format:
+  html:
+      theme:
+        dark: [lux, styles/theme-dark.scss] 
+        light: lux
