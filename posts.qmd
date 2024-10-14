@@ -1,0 +1,8 @@
+---
+title: "My Blog"
+listing: 
+  contents: posts # this name must match the folder you created
+  type: grid # or 'default' or 'table'; each type has its own set of yaml options to include
+  sort: "date desc" # sorting method, can sort on more than one field as well. 
+  categories: true # allows you to sort posts by assigned categories. 
+---

@@ -14,7 +14,7 @@ website:
       - text: "Notes & Talks"
         href: notes/notes.qmd
       - text: "Blog"
-        href: blog/index.qmd
+        href: posts.qmd
     tools:
       - icon: github
         href: https://github.com/dlculver
@@ -27,9 +27,4 @@ format:
         dark: [lux, styles/theme-dark.scss] 
         light: lux
 
-# Blog configuration
-blog:
-  page-title: "My Blog"
-  feed: true
-  entries:
-    - "blog/*.qmd"  # Automatically include blog posts from the blog folder
+

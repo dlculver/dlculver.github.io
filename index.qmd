@@ -3,7 +3,7 @@ title: "Dominic Culver's Homepage"
 format: html
 ---
 
-**Email Address:** dominic period culver at gmail dot com
+<span style="color: blue; text-decoration: underline;">**Email Address:**</span> dominic period culver at gmail dot com
 
 Welcome to my homepage! Here you will find some information about me and some of the things I have worked on. If anything here piques your interest, please feel free to reach out!
 
