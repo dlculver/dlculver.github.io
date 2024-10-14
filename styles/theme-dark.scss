@@ -22,7 +22,17 @@ a {
 }
 
 /* Code block styling */
-pre, code {
-  background-color: rgba(0, 0, 0, 0.8);
+pre {
+  background-color: rgba(0, 0, 0, 0.8);  /* Code blocks */
   color: $body-color;
+}
+
+/* Inline code block styling */
+code {
+  background-color: #d0c7c7 !important;  /* Completely black background for inline code */
+  color: #7429ff;  /* Bright purple color for inline code text */
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  box-shadow: none;
+  border: none;
 }
