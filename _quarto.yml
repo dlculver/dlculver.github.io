@@ -26,5 +26,6 @@ format:
       theme:
         dark: [lux, styles/theme-dark.scss] 
         light: lux
+      css: styles/styles.css
 
 

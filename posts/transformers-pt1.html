@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Dominic Leon Culver">
+<meta name="dcterms.date" content="2024-10-14">
 
-<title>My Blog – Dominic Culver’s Homepage</title>
+<title>Building a Transformer-based Translator: Part 1 – Dominic Culver’s Homepage</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +22,47 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,77 +90,20 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
+<meta name="quarto:status" content="draft">
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="../styles/styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Dominic Culver’s Homepage</span>
     </a>
   </div>
@@ -151,23 +114,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./research/research.html"> 
+    <a class="nav-link" href="../research/research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./teaching/teaching.html"> 
+    <a class="nav-link" href="../teaching/teaching.html"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./notes/notes.html"> 
+    <a class="nav-link" href="../notes/notes.html"> 
 <span class="menu-text">Notes &amp; Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="../posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -184,22 +147,38 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="deep-learning">deep-learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="machine-learning">machine-learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="model-implementation">model-implementation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="transformers">transformers <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">My Blog</h1>
-</div>
+<h1 class="title">Building a Transformer-based Translator: Part 1</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">transformers</div>
+    <div class="quarto-category">machine-learning</div>
+    <div class="quarto-category">deep-learning</div>
+    <div class="quarto-category">model-implementation</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dominic Leon Culver </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 14, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -209,54 +188,58 @@ window.Quarto = {
 </header>
 
 
+<p>Hello There! Welcome to my blog! This is my first post, and I am excited to share it with you. In this series, I’ll be walking you through a project where I built and trained a <strong>transformer-based translator</strong> from scratch. It was a challenging (and occasionally very frustrating) project, but also highly rewarding and I learned a ton from doing it.</p>
+<p>I tackled this project for a copy of reasons.</p>
+<ol type="1">
+<li><strong>Deepening my understanding of Transformers</strong>. I’ve used them in other projects (e.g.&nbsp;sentiment analysis with BERT), but I wanted to take a closer look under the hood and really understand how they work internally.</li>
+<li><strong>Improving my PyTorch skills</strong>. I’ve built models in PyTorch before and loved its flexibility, but I wanted to push my skills further by building something more complex from scratch.</li>
+<li><strong>Aspiring to do research</strong>. I am very interested in the current research landscape surronding LLMs, and I’d love to eventually contribute to this area. In order to do that, a strong understanding of transformers and how they work is essential.</li>
+</ol>
+<p>When I initially started this project, I thought it would be fairly straightforward. However, that is <em>not</em> what happened, and because of that I will be breaking this series into three parts. In this post, I will cover more of the history and the ideas around machine translation in general and discuss the motivations and ideas behind the attention mechanism. In the next posts, I will dive into the specifics in the original <em>Attention is All You Need</em> <span class="citation" data-cites="Vaswani:2017aa">(<a href="#ref-Vaswani:2017aa" role="doc-biblioref">Vaswani et al. 2017</a>)</span> paper and walk through how to turn that into actual code. After that, I will discuss the training process, model evaluation, and what I’d do differently if I tackled this project again. I’ll also talk about some of the services I used throughout the project.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In today’s post we will delve into the context in which transformers appeared. In particular we will discuss the main ideas behind the transformers architecture before delving too deep into the actual code. Today’s post will focus on</p>
+<ol type="1">
+<li>How to regard language translation as a machine learning task.</li>
+<li>General approaches to machine translation architecture.</li>
+<li>Tokenization</li>
+<li>The advent of the ``attention mechanism’’.</li>
+<li>Challenges with traditional machine translation architectures and the advantages of transformers</li>
+</ol>
+<p>By going through these points, I hope that you will be given sufficient context to understand what transformers are trying to do and why it garnered as much excitement as it did.</p>
+</section>
+<section id="translation-as-a-machine-learning-task" class="level1">
+<h1>Translation as a Machine Learning Task</h1>
+<p>Before touching transformers, it is a natural question to ask why we should believe that translating a sentence from one language into another can even be solved using machine learning. Language is complicated and different languages often have vastly differing ways of expressing ideas between them. Take for example languages like English and Japanese. English generally uses the word order Subject-Verb-Object, i.e.&nbsp;“The boy throws the ball”. The “boy” here is the subject, “throws” is the verb, and “ball” is the object. In Japanese, the word order is Subject-Object-Verb instead. In Japanese, our sentence would instead be:</p>
+<blockquote class="blockquote">
+<p><strong>Japanese Sentence</strong>:<br>
+少年はボールを投げる。<br>
+“Shōnen wa bōru o nageru”<br>
+<strong>English Word-by-Word</strong>:<br>
+“Boy ball throws”</p>
+</blockquote>
+</section>
+<section id="encoder-decoder-architecture" class="level1">
+<h1>Encoder-Decoder Architecture</h1>
+</section>
+<section id="tokenization" class="level1">
+<h1>Tokenization</h1>
+</section>
+<section id="the-attention-mechanism" class="level1">
+<h1>The Attention Mechanism</h1>
+</section>
+<section id="challenges-with-traditional-architectures" class="level1">
 
 
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="transformers,machine-learning,deep-learning,model-implementation" data-listing-date-sort="1728882000000" data-listing-file-modified-sort="1728936970594" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="536">
-<a href="./posts/transformers-pt1.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Building a Transformer-based Translator: Part 1
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('transformers'); return false;">
-transformers
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine-learning'); return false;">
-machine-learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('deep-learning'); return false;">
-deep-learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('model-implementation'); return false;">
-model-implementation
-</div>
-</div>
-<div class="card-text listing-description">
+</section>
 
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Challenges with Traditional Architectures</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Vaswani:2017aa" class="csl-entry" role="listitem">
+Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. 2017. <span>“Attention Is All You Need,”</span> June. <a href="https://arxiv.org/pdf/1706.03762.pdf">https://arxiv.org/pdf/1706.03762.pdf</a>.
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Dominic Leon Culver
-</div>
-<div class="listing-date">
-Oct 14, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
