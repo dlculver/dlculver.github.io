@@ -1,0 +1,23 @@
+---
+title: "Hello, World!"
+date: "2025-06-05"
+categories: [News]
+---
+
+Welcome to my new blog! 
+
+I am a mathematician turned AI enthusiast, and I am excited to start sharing my thoughts and experiences here. For this first post I wanted to share a bit about myself and what you can expect from this blog.
+
+## About Me
+
+I completed my PhD in mathematics in 2017 at the University of Notre Dame, where I worked with Mark Behrens and wrote a thesis in stable homotopy theory. After that, I did two postdocs: one at the University of Illinois, Urbana-Champaign, and another at the Max Planck Institute for Mathematics in Bonn, Germany. My research focused primarily on chromatic homotopy theory broadly, and on using the spectrum of _topological modular forms_ to understand the stable homotopy groups of spheres in particular. During my time in academia, I taught a variety of courses at both the undergraduate and graduate levels, including algebra, topology, and homotopy theory.
+
+In 2023, I made the decision to transition from academia to the tech industry. I joined an early-stage legal AI startup where I worked on building AI systems and applications. I got to work on a lot of cool things with cool people, and I learned a lot about software development, machine learning, and natural language processing. It is amazing to think about how far AI has come in just a few years, and I am excited to be part of this rapidly evolving field.
+
+## What to Expect
+
+For the moment, I plan to use this blog as a platform to share my thoughts on various topics related to AI and machine learning, though there may be the occasional mathematically focused post as well :wink:. For now, I will be writing predominately about different papers I encounter in the wild, interesting developments in the field, and my personal experiences and insights as I continue to learn and grow in this new domain.
+
+Comments and feedback are always welcome, and I hope to foster a community of like-minded individuals who are passionate about AI, machine learning, and the intersection of these fields with mathematics.
+
+Happy reading, and stay tuned for more posts! If you have any suggestions for topics you'd like me to cover, feel free to reach out! :wave:

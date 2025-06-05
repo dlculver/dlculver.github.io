@@ -23,8 +23,13 @@ website:
 
 format:
   html:
-      theme:
-        dark: [lux, styles/theme-dark.scss] 
-        light: lux
+    theme:
+      dark: [lux, styles/theme-dark.scss] 
+      light: lux
+    html-math-method: mathjax
+    highlight-style: github
+    css: styles/styles.css
+    toc: true
+    from: markdown+emoji
 
 

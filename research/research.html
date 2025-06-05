@@ -69,10 +69,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles/styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -123,7 +153,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#projects" id="toc-projects" class="nav-link active" data-scroll-target="#projects">Projects</a></li>
+  <li><a href="#publications" id="toc-publications" class="nav-link" data-scroll-target="#publications">Publications</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -146,37 +185,49 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="in-progress" class="level1">
-<h1>In progress</h1>
-<ul>
-<li><p><strong>The structure of the (v_2)-local algebraic tmf resolution (joint with Mark Behrens and Prasit Bhattacharya). Under Review</strong></p>
-<p>We give a complete description of the (E_1)-page of the (v_2)-local algebraic tmf resolution.</p></li>
-</ul>
+<section id="projects" class="level1">
+<h1>Projects</h1>
 </section>
-<section id="publications-preprints" class="level1">
-<h1>Publications &amp; Preprints</h1>
+<section id="publications" class="level1">
+<h1>Publications</h1>
 <ul>
-<li><p><strong><a href="https://arxiv.org/abs/2204.05890">Algebraic K-theory of Elliptic Cohomology</a> (with Gabe Angelini-Knoll, Christian Ausoni, Eva Höning, and John Rognes). Accepted, to appear in Geometry and Topology</strong></p>
-<p>We compute the (V(2))-homotopy of the algebraic K-theory of the second truncated Brown-Peterson spectrum.</p></li>
-<li><p><strong><a href="https://arxiv.org/abs/2203.09455">Exotic K(h)-local Picard groups when 2p-1=h^2 and the Vanishing Conjecture</a> (joint with Ningchuan Zhang). Accepted.</strong></p></li>
-<li><p><strong><a href="https://arxiv.org/abs/2112.07479">The Motivic Lambda algebra</a> (joint with J.D. Quigley and W. Balderrama). Accepted, to appear in Geometry and Topology</strong></p>
-<p>We give a description of the motivic Lambda algebra over general base fields. We recover various calculations of Ext over the motivic Steenrod algebra and use these to determine an infinite family of (d_2)-differentials out of the 1-line in the R-motivic ASS.</p></li>
-<li><p><strong><a href="https://arxiv.org/abs/2106.06785">Topological Hochschild Homology of the second truncated Brown-Peterson spectrum, part 1</a> (Joint with Gabe Angelini-Knoll and Eva Höning)</strong></p></li>
-<li><p><strong><a href="https://arxiv.org/abs/2007.08682">Algebraic Slice Spectral Sequences</a> (Joint with H. Kong and J.D. Quigley). Accepted. To appear in Documenta Mathematica</strong></p></li>
-<li><p><strong><a href="tmfASSZ.pdf">The telescope conjecture at height 2 and the tmf resolution</a> (Joint with Behrens, Beaudry, Bhattacharya, and Xu). Accepted. To appear in the Journal of Topology</strong></p>
-<p>We analyze the tmf-based Adams spectral sequence for the type 2 spectrum Z. This is used to deduce that the K(2)-local Adams-Novikov spectral sequence, whose E2-term was computed by Bhattacharya-Egger, collapses. We also explore how this spectral sequence detects the telescopic homotopy of Z.</p></li>
-<li><p><strong><a href="K(1)-local_tmfcoops_current.pdf">K(1)-local tmf co-operations</a> (Joint with Paul VanKoughnett). Accepted. To appear in JHRS</strong></p>
-<p>Using Hopkins’ construction of the spectrum tmf in the K(1)-local category, we compute the K(1)-local tmf cooperations.</p></li>
-<li><p><strong><a href="https://arxiv.org/abs/1905.11952">kq-resolutions I</a> (Joint with JD Quigley). Accepted. To appear in Trans. AMS</strong></p>
-<p>We compute the cooperations of the very effective cover of Hermitian K-theory over the complex numbers. We use this to analyze the kq-resolution and prove complex motivic analogs of Mahowald’s results using bo-resolutions, such as the order of the 2-torsion in the image of J. We also formulate and provide evidence for a motivic Telescope Conjecture.</p></li>
-<li><p><strong><a href="ASStmf3_revision2.pdf">The Adams spectral sequence for 3-local tmf</a>. Accepted. To appear in JHRS.</strong></p>
-<p>Last updated 10/08/2020</p></li>
-<li><p><strong><a href="BP2coops_podd_revision1.pdf">The BP&lt;2&gt;-cooperations algebra at odd primes</a>. JPAA 224 (May 2020)</strong></p>
-<p>Last updated 9/20/19</p></li>
-<li><p><strong><a href="BP2coop_final.pdf">On BP&lt;2&gt;-cooperations</a>. Algebraic &amp; Geometric Topology 19 (2019) 807-862</strong></p></li>
-<li><p><strong><a href="boASS5.pdf">On the E2-term of the bo-Adams spectral sequence</a>. J. Topology 13 (2020) 356-415.</strong></p>
-<p>(with Mark Behrens, Agnes Beaudry, Prasit Bhattacharya, and Zhouli Xu). Last updated 2/1/17.</p></li>
-<li><p><strong><a href="t_n_numpoly_final_revised.pdf">A new basis for complex K-theory cooperations algebra</a>. Topology and its Applications 234 (2018) 7-25</strong></p></li>
+<li><p><strong><a href="https://arxiv.org/abs/2301.11230">The structure of the <span class="math inline">\(v_2\)</span>-local algebraic tmf resolution</a></strong><br>
+<em>Joint with Mark Behrens and Prasit Bhattacharya</em><br>
+Accepted. To appear in Mathematische Zeitschrift</p></li>
+<li><p><strong><a href="https://msp.org/gt/2025/29-2/p02.xhtml">Algebraic <span class="math inline">\(K\)</span>-theory of Elliptic Cohomology</a></strong><br>
+<em>With Gabe Angelini-Knoll, Christian Ausoni, Eva Höning, and John Rognes</em><br>
+Geometry &amp; Topology 29 (2025) 619–686</p></li>
+<li><p><strong><a href="https://arxiv.org/abs/2203.09455">Exotic <span class="math inline">\(K(h)\)</span>-local Picard groups when <span class="math inline">\(2p-1=h^2\)</span> and the Vanishing Conjecture</a></strong><br>
+<em>Joint with Ningchuan Zhang</em><br>
+Accepted</p></li>
+<li><p><strong><a href="https://msp.org/gt/2025/29-3/p07.xhtml">The Motivic Lambda algebra</a></strong><br>
+<em>Joint with J.D. Quigley and W. Balderrama</em><br>
+Geometry &amp; Topology 29 (2025) 1489–1570</p></li>
+<li><p><strong><a href="https://arxiv.org/abs/2106.06785">Topological Hochschild Homology of the second truncated Brown-Peterson spectrum, part 1</a></strong><br>
+<em>Joint with Gabe Angelini-Knoll and Eva Höning</em> Accepted. Appeared in Algebraic and Geometric Topology</p></li>
+<li><p><strong><a href="https://arxiv.org/abs/2007.08682">Algebraic Slice Spectral Sequences</a></strong><br>
+<em>Joint with H. Kong and J.D. Quigley</em><br>
+Accepted. Appeared in Documenta Mathematica</p></li>
+<li><p><strong><a href="tmfASSZ.pdf">The telescope conjecture at height 2 and the <span class="math inline">\(tmf\)</span> resolution</a></strong><br>
+<em>Joint with Behrens, Beaudry, Bhattacharya, and Xu</em><br>
+Journal of Topology, 14(4), 1243–1320. (2021, December).</p></li>
+<li><p><strong><a href="https://link.springer.com/article/10.1007/s40062-021-00283-7?fromPaywallRec=true">On the <span class="math inline">\(K(1)\)</span>-local homotopy of <span class="math inline">\(tmf \wedge tmf\)</span></a></strong><br>
+<em>Joint with Paul VanKoughnett</em><br>
+J. Homotopy Relat. Struct. 16, 367–426 (2021)</p></li>
+<li><p><strong><a href="https://arxiv.org/abs/1905.11952"><span class="math inline">\(kq\)</span>-resolutions I</a></strong><br>
+<em>Joint with JD Quigley</em><br>
+Accepted. To appear in Trans. AMS</p></li>
+<li><p><strong><a href="ASStmf3_revision2.pdf">The Adams spectral sequence for 3-local <span class="math inline">\(tmf\)</span></a></strong><br>
+J. Homotopy Relat. Struct. 16, 1–40 (2021)</p></li>
+<li><p><strong><a href="BP2coops_podd_revision1.pdf">The <span class="math inline">\(BP\langle2\rangle\)</span>-cooperations algebra at odd primes</a></strong><br>
+JPAA 224 (May 2020)</p></li>
+<li><p><strong><a href="BP2coop_final.pdf">On <span class="math inline">\(BP\langle2\rangle\)</span>-cooperations</a></strong><br>
+Algebraic &amp; Geometric Topology 19 (2019) 807-862</p></li>
+<li><p><strong><a href="boASS5.pdf">On the <span class="math inline">\(E_2\)</span>-term of the <span class="math inline">\(bo\)</span>-Adams spectral sequence</a></strong><br>
+<em>Joint with Mark Behrens, Agnes Beaudry, Prasit Bhattacharya, and Zhouli Xu</em><br>
+J. Topology 13 (2020) 356-415</p></li>
+<li><p><strong><a href="t_n_numpoly_final_revised.pdf">A new basis for complex <span class="math inline">\(K\)</span>-theory cooperations algebra</a></strong><br>
+Topology and its Applications 234 (2018) 7-25</p></li>
 </ul>
 
 
