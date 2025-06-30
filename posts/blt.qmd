@@ -1,0 +1,68 @@
+---
+title: "Byte Latent Transformers"
+date: "2025-06-29"
+categories: [LLMs, Transformers]
+draft: true
+format:
+  html:
+    mermaid:
+      theme: neutral
+---
+
+# Introduction
+
+Earlier this year, a very interesting research article came out from a team at
+Meta. In this [paper](https://arxiv.org/pdf/2412.09871), they propose a new transformers-based architecture for LLMs
+which operates at the level of _bytes_ rather than at the level of _tokens_,
+thus being dubbed the _Byte Latent Transformer_ (BLT for short 🥪). One
+of the central motivations for their proposal is that current tokenization-based
+approaches to LLMs are inefficient, in as far as tokenization is a pre-computed
+grouping of bytes which doesn't necessarily allocate compute resources
+intelligently based on the context. To justify their new architecture, they show
+the results from several experiments which shows that their model performs as
+well as (or even better in some instances) other frontier models. My goals for
+this post is:
+
+* Explain in greater detail the motivation to work on bytes
+* Explain the model architecture and how training and inference work.
+* Discuss the empirical studies done by the authors as the relate to performance
+  and scaling laws for their architecture.
+* Raise some questions that I had from reading the paper. 
+
+This post is by no means a substitute for reading the paper, and I highly
+encourage you to go do so. However, I hope this post helps in some small way.
+And of course, it should go without saying, that any mistakes are mine and mine
+alone, and feel free to email me if you have any corrections. 
+
+# LLMs and Tokenization
+
+Before getting into the nitty-gritty of the BLT architecture it seems best to
+remind ourselves how LLMs currently work and where this brings up bottlenecks
+and pitfalls. <!-- Not sure I love this phrasing -->  Of main concern for the
+BLT paper, in particular, is the reliance on tokenization for LLMs. Below is a
+diagram which caricatures how LLMs currently work. 
+
+```{mermaid}
+flowchart LR
+  A[Input String] --> B[Tokenizer]
+  B --> C[Sequence of Tokens]
+  C --> D[Decoder-only Transformer]
+  D --> E[Probability Distribution]
+  E --> F[Next Token]
+```
+
+Let's go through this diagram step-by-step with a running example. Suppose that
+the input sentence is `"The cat is on the "` 
+
+# Bytes, Entropy, and Patching
+
+# Model Architecture
+
+# Training & Scaling Laws
+
+# Questions
+
+# Final Thoughts and Closing Remarks
+
+# References
+
