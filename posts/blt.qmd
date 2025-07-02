@@ -51,8 +51,42 @@ flowchart LR
   E --> F[Next Token]
 ```
 
-Let's go through this diagram step-by-step with a running example. Suppose that
-the input sentence is `"The cat is on the "` 
+What is the purpose of the tokenizer in the first place? Transformers take in
+tensors and output tensors. However, when using a transformer, we want to input
+a string of text. The purpose of the tokenizer is to bridge this gap. It takes
+in an input string and partitions the string into substrings known as tokens.
+These tokens, in turn, are mapped onto integers, and the whole input string is
+turned into an array of integers. We can tensorize this array, thereby creating
+an object which the transformer can operate on.
+
+There are several tokenizers out there, but all tokenizers use some sort of
+algorithm (e.g. Byte Pair Encoding) and a corpus of text to construct the
+tokens. Moreover, the tokenizer is trained separately and before any sort of
+training takes place for the LLM itself. This means, in particular, that the
+tokenizer being used has a _fixed_ token space. In the case of GPT-2 example,
+the tokenizer used was trained using the BPE algorithm and has 50,257 tokens. 
+
+After converting an input text into an array of integers, we feed that into
+the LLM and get an output tensor which is a probability distribution over the
+token space. In the case of GPT-2, then, this would be a 50,257-vector.
+
+Let's go through this diagram step-by-step with a running example using the
+GPT-2 tokenizer. Suppose that the input sentence is `"The cat is on the"`. This
+is tokenized into the following sequence: `["The", " cat", " is", " on", " the"]`.
+
+These are then turned into a tensor array of integers `[464, 3797, 318, 319, 262]`.
+Feeding these into the transformer, we get an output tensor of length 50,257.
+Taking the argmax of this probability tensor we are likely to get the integer
+2603, which corresponds to the token `" mat"`. Note how the tokenizer determines the type of output the transformer will
+output. 
+
+The use of tokenizers come with certain trade-offs. For one, they have a fixed
+token space as mentioned earlier. This results in the tokenizer not being able
+to recognize sequences of characters which are out of sample. Another, more
+subtle problem, is that the tokenizer can change how it tokenizes once later
+characters are added. Finally, the tokenizer is static, meaning it 
+
+
 
 # Bytes, Entropy, and Patching
 

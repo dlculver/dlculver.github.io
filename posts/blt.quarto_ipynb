@@ -1,0 +1,151 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Byte Latent Transformers\"\n",
+        "date: \"2025-06-29\"\n",
+        "categories: [LLMs, Transformers]\n",
+        "# draft: true\n",
+        "format:\n",
+        "  html:\n",
+        "    mermaid:\n",
+        "      theme: neutral\n",
+        "---\n",
+        "\n",
+        "\n",
+        "# Introduction\n",
+        "\n",
+        "Earlier this year, a very interesting research article came out from a team at\n",
+        "Meta. In this [paper](https://arxiv.org/pdf/2412.09871), they propose a new transformers-based architecture for LLMs\n",
+        "which operates at the level of _bytes_ rather than at the level of _tokens_,\n",
+        "thus being dubbed the _Byte Latent Transformer_ (BLT for short 🥪). One\n",
+        "of the central motivations for their proposal is that current tokenization-based\n",
+        "approaches to LLMs are inefficient, in as far as tokenization is a pre-computed\n",
+        "grouping of bytes which doesn't necessarily allocate compute resources\n",
+        "intelligently based on the context. To justify their new architecture, they show\n",
+        "the results from several experiments which shows that their model performs as\n",
+        "well as (or even better in some instances) other frontier models. My goals for\n",
+        "this post is:\n",
+        "\n",
+        "* Explain in greater detail the motivation to work on bytes\n",
+        "* Explain the model architecture and how training and inference work.\n",
+        "* Discuss the empirical studies done by the authors as the relate to performance\n",
+        "  and scaling laws for their architecture.\n",
+        "* Raise some questions that I had from reading the paper. \n",
+        "\n",
+        "This post is by no means a substitute for reading the paper, and I highly\n",
+        "encourage you to go do so. However, I hope this post helps in some small way.\n",
+        "And of course, it should go without saying, that any mistakes are mine and mine\n",
+        "alone, and feel free to email me if you have any corrections. \n",
+        "\n",
+        "# LLMs and Tokenization\n",
+        "\n",
+        "Before getting into the nitty-gritty of the BLT architecture it seems best to\n",
+        "remind ourselves how LLMs currently work and where this brings up bottlenecks\n",
+        "and pitfalls. <!-- Not sure I love this phrasing -->  Of main concern for the\n",
+        "BLT paper, in particular, is the reliance on tokenization for LLMs. Below is a\n",
+        "diagram which caricatures how LLMs currently work. \n",
+        "\n",
+        "\n",
+        "```{mermaid}\n",
+        "flowchart LR\n",
+        "  A[Input String] --> B[Tokenizer]\n",
+        "  B --> C[Sequence of Tokens]\n",
+        "  C --> D[Decoder-only Transformer]\n",
+        "  D --> E[Probability Distribution]\n",
+        "  E --> F[Next Token]\n",
+        "```\n",
+        "\n",
+        "\n",
+        "What is the purpose of the tokenizer in the first place? Transformers take in\n",
+        "tensors and output tensors. However, when using a transformer, we want to input\n",
+        "a string of text. The purpose of the tokenizer is to bridge this gap. It takes\n",
+        "in an input string and partitions the string into substrings known as tokens.\n",
+        "These tokens, in turn, are mapped onto integers, and the whole input string is\n",
+        "turned into an array of integers. We can tensorize this array, thereby creating\n",
+        "an object which the transformer can operate on.\n",
+        "\n",
+        "There are several tokenizers out there, but all tokenizers use some sort of\n",
+        "algorithm (e.g. Byte Pair Encoding) and a corpus of text to construct the\n",
+        "tokens. Moreover, the tokenizer is trained separately and before any sort of\n",
+        "training takes place for the LLM itself. This means, in particular, that the\n",
+        "tokenizer being used has a _fixed_ token space. In the case of GPT-2 example,\n",
+        "the tokenizer used was trained using the BPE algorithm and has 50,257 tokens. \n",
+        "\n",
+        "After converting an input text into an array of integers, we feed that into\n",
+        "the LLM and get an output tensor which is a probability distribution over the\n",
+        "token space. In the case of GPT-2, then, this would be a 50,257-vector.\n",
+        "\n",
+        "Let's go through this diagram step-by-step with a running example using the\n",
+        "GPT-2 tokenizer. Suppose that the input sentence is `\"The cat is on the\"`. This\n",
+        "is tokenized into the following sequence \n"
+      ],
+      "id": "d71fded3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "[\"The\", \" cat\", \" is\", \" on\", \" the\"]."
+      ],
+      "id": "ec85d7ef",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "These are then turned into a tensor array of integers"
+      ],
+      "id": "df918275"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "[464, 3797, 318, 319, 262]."
+      ],
+      "id": "b8356d9d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Feeding these into the transformer, we get an output tensor of length 50,257.\n",
+        "Taking the argmax of this probability tensor we are likely to get the integer\n",
+        "2603, which corresponds to the token `\" mat\"`. Note how the tokenizer determines the type of output the transformer will\n",
+        "output. \n",
+        "\n",
+        "\n",
+        "\n",
+        "# Bytes, Entropy, and Patching\n",
+        "\n",
+        "# Model Architecture\n",
+        "\n",
+        "# Training & Scaling Laws\n",
+        "\n",
+        "# Questions\n",
+        "\n",
+        "# Final Thoughts and Closing Remarks\n",
+        "\n",
+        "# References\n"
+      ],
+      "id": "56e58a7c"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
