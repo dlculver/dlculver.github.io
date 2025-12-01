@@ -13,8 +13,6 @@ website:
         href: teaching/teaching.qmd
       - text: "Notes & Talks"
         href: notes/notes.qmd
-      - text: "Blog"
-        href: posts.qmd
     tools:
       - icon: github
         href: https://github.com/dlculver

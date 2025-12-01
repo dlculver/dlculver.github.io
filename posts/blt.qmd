@@ -2,7 +2,7 @@
 title: "Byte Latent Transformers"
 date: "2025-06-29"
 categories: [LLMs, Transformers]
-draft: true
+# draft: true
 format:
   html:
     mermaid:
@@ -78,7 +78,8 @@ These are then turned into a tensor array of integers `[464, 3797, 318, 319, 262
 Feeding these into the transformer, we get an output tensor of length 50,257.
 Taking the argmax of this probability tensor we are likely to get the integer
 2603, which corresponds to the token `" mat"`. Note how the tokenizer determines the type of output the transformer will
-output. 
+output. In the case of an LLM, the fact that we use a tokenizer dictates that we
+must output a probability distribution from which we sample.
 
 The use of tokenizers come with certain trade-offs. For one, they have a fixed
 token space as mentioned earlier. This results in the tokenizer not being able

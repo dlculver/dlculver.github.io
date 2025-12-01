@@ -135,10 +135,6 @@ window.Quarto = {
     <a class="nav-link" href="../notes/notes.html"> 
 <span class="menu-text">Notes &amp; Talks</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../posts.html"> 
-<span class="menu-text">Blog</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools tools-wide">
@@ -158,8 +154,11 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#projects" id="toc-projects" class="nav-link active" data-scroll-target="#projects">Projects</a></li>
-  <li><a href="#publications" id="toc-publications" class="nav-link" data-scroll-target="#publications">Publications</a></li>
+  <li><a href="#publications" id="toc-publications" class="nav-link active" data-scroll-target="#publications">Publications</a>
+  <ul class="collapse">
+  <li><a href="#ai-ml" id="toc-ai-ml" class="nav-link" data-scroll-target="#ai-ml">AI / ML</a></li>
+  <li><a href="#mathematics" id="toc-mathematics" class="nav-link" data-scroll-target="#mathematics">Mathematics</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -185,11 +184,23 @@ window.Quarto = {
 </header>
 
 
-<section id="projects" class="level1">
-<h1>Projects</h1>
-</section>
+<!-- # Projects -->
 <section id="publications" class="level1">
 <h1>Publications</h1>
+<section id="ai-ml" class="level2">
+<h2 class="anchored" data-anchor-id="ai-ml">AI / ML</h2>
+<ul>
+<li><p><strong><a href="https://arxiv.org/abs/2509.20624">FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Models</a></strong><br>
+<em>Amin Karimi Monsefi, Nikhil Bhendawade, Manuel Rafael Ciosici, <strong>Dominic Culver</strong>, Yizhe Zhang, Irina Belousova.</em></p></li>
+<li><p><strong><a href="https://arxiv.org/abs/2403.03883">SaulLM-7B: A pioneering Large Language Model for Law</a></strong><br>
+<em>Pierre Colombo, Telmo Pessoa Pires, Malik Boudiaf, <strong>Dominic Culver</strong>, et al.</em></p></li>
+<li><p><strong>SaulLM-54B &amp; SaulLM-141B: Scaling Up Domain Adaptation for the Legal Domain</strong><br>
+<em>Pierre Colombo, Telmo Pessoa Pires, Malik Boudiaf, Rui Melo, <strong>Dominic Culver</strong>, et al.</em><br>
+Accepted to NeurIPS 2024.</p></li>
+</ul>
+</section>
+<section id="mathematics" class="level2">
+<h2 class="anchored" data-anchor-id="mathematics">Mathematics</h2>
 <ul>
 <li><p><strong><a href="https://arxiv.org/abs/2301.11230">The structure of the <span class="math inline">\(v_2\)</span>-local algebraic tmf resolution</a></strong><br>
 <em>Joint with Mark Behrens and Prasit Bhattacharya</em><br>
@@ -199,15 +210,16 @@ Accepted. To appear in Mathematische Zeitschrift</p></li>
 Geometry &amp; Topology 29 (2025) 619–686</p></li>
 <li><p><strong><a href="https://arxiv.org/abs/2203.09455">Exotic <span class="math inline">\(K(h)\)</span>-local Picard groups when <span class="math inline">\(2p-1=h^2\)</span> and the Vanishing Conjecture</a></strong><br>
 <em>Joint with Ningchuan Zhang</em><br>
-Accepted</p></li>
+Topology and its Applications 341 (2024) 108742</p></li>
 <li><p><strong><a href="https://msp.org/gt/2025/29-3/p07.xhtml">The Motivic Lambda algebra</a></strong><br>
 <em>Joint with J.D. Quigley and W. Balderrama</em><br>
 Geometry &amp; Topology 29 (2025) 1489–1570</p></li>
 <li><p><strong><a href="https://arxiv.org/abs/2106.06785">Topological Hochschild Homology of the second truncated Brown-Peterson spectrum, part 1</a></strong><br>
-<em>Joint with Gabe Angelini-Knoll and Eva Höning</em> Accepted. Appeared in Algebraic and Geometric Topology</p></li>
+<em>Joint with Gabe Angelini-Knoll and Eva Höning</em><br>
+Accepted. Appeared in Algebraic and Geometric Topology</p></li>
 <li><p><strong><a href="https://arxiv.org/abs/2007.08682">Algebraic Slice Spectral Sequences</a></strong><br>
 <em>Joint with H. Kong and J.D. Quigley</em><br>
-Accepted. Appeared in Documenta Mathematica</p></li>
+Documenta Mathematica, 26 (2021), 1085-1119</p></li>
 <li><p><strong><a href="tmfASSZ.pdf">The telescope conjecture at height 2 and the <span class="math inline">\(tmf\)</span> resolution</a></strong><br>
 <em>Joint with Behrens, Beaudry, Bhattacharya, and Xu</em><br>
 Journal of Topology, 14(4), 1243–1320. (2021, December).</p></li>
@@ -215,7 +227,7 @@ Journal of Topology, 14(4), 1243–1320. (2021, December).</p></li>
 <em>Joint with Paul VanKoughnett</em><br>
 J. Homotopy Relat. Struct. 16, 367–426 (2021)</p></li>
 <li><p><strong><a href="https://arxiv.org/abs/1905.11952"><span class="math inline">\(kq\)</span>-resolutions I</a></strong><br>
-<em>Joint with JD Quigley</em><br>
+<em>Joint with J.D. Quigley</em><br>
 Accepted. To appear in Trans. AMS</p></li>
 <li><p><strong><a href="ASStmf3_revision2.pdf">The Adams spectral sequence for 3-local <span class="math inline">\(tmf\)</span></a></strong><br>
 J. Homotopy Relat. Struct. 16, 1–40 (2021)</p></li>
@@ -231,6 +243,7 @@ Topology and its Applications 234 (2018) 7-25</p></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

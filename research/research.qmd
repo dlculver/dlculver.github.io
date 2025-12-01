@@ -5,9 +5,23 @@ format:
     html-math-method: mathjax
 ---
 
-# Projects
+<!-- # Projects -->
 
 # Publications
+
+## AI / ML
+
+- **[FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Models](https://arxiv.org/abs/2509.20624)**  
+  *Amin Karimi Monsefi, Nikhil Bhendawade, Manuel Rafael Ciosici, **Dominic Culver**, Yizhe Zhang, Irina Belousova.*
+
+- **[SaulLM-7B: A pioneering Large Language Model for Law](https://arxiv.org/abs/2403.03883)**  
+  *Pierre Colombo, Telmo Pessoa Pires, Malik Boudiaf, **Dominic Culver**, et al.*
+
+- **SaulLM-54B & SaulLM-141B: Scaling Up Domain Adaptation for the Legal Domain**  
+  *Pierre Colombo, Telmo Pessoa Pires, Malik Boudiaf, Rui Melo, **Dominic Culver**, et al.*  
+  Accepted to NeurIPS 2024.
+
+## Mathematics
 
 - **[The structure of the $v_2$-local algebraic tmf resolution](https://arxiv.org/abs/2301.11230)**  
   *Joint with Mark Behrens and Prasit Bhattacharya*  
@@ -19,19 +33,19 @@ format:
 
 - **[Exotic $K(h)$-local Picard groups when $2p-1=h^2$ and the Vanishing Conjecture](https://arxiv.org/abs/2203.09455)**  
   *Joint with Ningchuan Zhang*  
-  Accepted
+  Topology and its Applications 341 (2024) 108742
 
 - **[The Motivic Lambda algebra](https://msp.org/gt/2025/29-3/p07.xhtml)**  
   *Joint with J.D. Quigley and W. Balderrama*  
   Geometry & Topology 29 (2025) 1489–1570
 
 - **[Topological Hochschild Homology of the second truncated Brown-Peterson spectrum, part 1](https://arxiv.org/abs/2106.06785)**  
-  *Joint with Gabe Angelini-Knoll and Eva Höning*
+  *Joint with Gabe Angelini-Knoll and Eva Höning*  
   Accepted. Appeared in Algebraic and Geometric Topology
 
 - **[Algebraic Slice Spectral Sequences](https://arxiv.org/abs/2007.08682)**  
   *Joint with H. Kong and J.D. Quigley*  
-  Accepted. Appeared in Documenta Mathematica
+  Documenta Mathematica, 26 (2021), 1085-1119
 
 - **[The telescope conjecture at height 2 and the $tmf$ resolution](tmfASSZ.pdf)**  
   *Joint with Behrens, Beaudry, Bhattacharya, and Xu*  
@@ -42,7 +56,7 @@ format:
   J. Homotopy Relat. Struct. 16, 367–426 (2021)
 
 - **[$kq$-resolutions I](https://arxiv.org/abs/1905.11952)**  
-  *Joint with JD Quigley*  
+  *Joint with J.D. Quigley*  
   Accepted. To appear in Trans. AMS
 
 - **[The Adams spectral sequence for 3-local $tmf$](ASStmf3_revision2.pdf)**  
